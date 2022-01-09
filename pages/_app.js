@@ -3,7 +3,9 @@ import '../styles/globals.css'
 import { Toaster } from 'react-hot-toast'
 import { UserContext } from '../lib/context'
 import { useUserData } from '../lib/hooks'
-
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 
 function MyApp({ Component, pageProps }) {

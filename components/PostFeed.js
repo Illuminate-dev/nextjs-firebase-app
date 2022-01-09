@@ -1,3 +1,5 @@
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function PostFeed({ posts, admin }) {
@@ -37,7 +39,7 @@ function PostItem({ post, admin = false}) {
             <span>
                 {wordCount} words. {minutesToRead} min read
             </span>
-            <span>💗{post.heartCount}</span>
+            <span><FontAwesomeIcon icon={faHeart} style={{color: "#FF0000"}}></FontAwesomeIcon>{post.heartCount}</span>
         </footer>
 
     </div>

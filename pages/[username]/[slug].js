@@ -6,6 +6,8 @@ import { firestore, getUserWithUsername, postToJSON, increment } from "../../lib
 import AuthCheck from "../../components/AuthCheck";
 import HeartButton from "../../components/HeartButton";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 
 export async function getStaticProps({params}) {
@@ -64,12 +66,12 @@ export default function Post(props) {
 
       <aside className="card">
         <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
+          <strong>{post.heartCount || 0} <FontAwesomeIcon icon={faHeart} style={{color: "#FF0000"}}></FontAwesomeIcon></strong>
         </p>
 
         <AuthCheck fallback={
           <Link href="/enter">
-            <button>💗 Sign Up</button>
+            <button><FontAwesomeIcon icon={faHeart} style={{color: "#FF0000"}}></FontAwesomeIcon> Sign Up</button>
           </Link>
         }>
           <HeartButton postRef={postRef} />
